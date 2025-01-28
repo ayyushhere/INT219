@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Don't have account?! Want to join us?</h2>
+        <label for="name">Name:</label>
+        <input type="text" required placeholder="First name Last name" id="name" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" required id="email" name="email"><br>
+        <label for="cities">Select city</label>
+        <select name="cities" id="cities">
+            <option value="Select" disable select hidden>Select</option>
+            <option value="Noida">Noida</option>
+            <option value="Noida">Delhi</option>
+            <option value="Noida">Kanpur</option>
+            <option value="Noida">Fatehpur</option>
+            <option value="Banglore">Banglore</option>
+        </select>
+
+        <br>
+
+        <label for="address" required >Address:</label>
+        <textarea id="address" name="address" cols="30" rows="5"></textarea><br>
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+
+        <br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password">
+
+        <br>
+        <label for="confirm">Confirm Password</label>
+        <input type="password" name="confirm" id="confirm" oninput="checkPassword">
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail with Link</title>
+    <style>
+        img{
+            border: 1px solid brown;
+            border-radius: 8px;
+            padding: 5px;
+            width: 300px;
+            margin: 200px 10px 10px 600px;
+        }
+
+        img:hover{
+            box-shadow: 0 0 2px 20px pink;
+        }
+
+        .caption{
+            margin: 1px 10px 10px 650px;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="image.png" target="_blank" class="thumbnail">
+        <img src="image.png" alt="Thumbnail Image">
+        <div class="caption">Click to open in a new page</div>
+    </a>
+</body>
+</html>

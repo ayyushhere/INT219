@@ -1,0 +1,19 @@
+p{
+    background-color: beige;
+}
+
+#item{
+    background-color: pink;
+}
+
+div{
+    background-color: yellow;
+}
+
+.p{
+    background-color: brown;
+}
+
+.box p{
+    color: red;
+}

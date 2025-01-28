@@ -1,0 +1,13 @@
+div{
+    background-color: lightgray;
+    width: 350px;
+    border: 15px solid pink;
+    padding: 50px;
+    margin: 20px 400px;
+}
+
+#para1{
+    text-align: center;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
