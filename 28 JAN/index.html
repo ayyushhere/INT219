@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            border: 2px solid black;
+            display: grid;
+            grid-template-areas:
+                "logo header header"
+                "nav nav nav"
+                "nav content content"
+                "white content content"
+                "footer footer footer";
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: auto;
+            gap: 10px;
+            padding: 20px;
+        }
+        .logo {
+            grid-area: logo;
+            background: gray;
+            height: 50px;
+        }
+        .header {
+            grid-area: header;
+            background: darkgray;
+            height: 50px;
+        }
+        .nav {
+            grid-area: nav;
+            background: lightgray;
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+        .nav div {
+            background: black;
+            color: white;
+            padding: 10px;
+            flex: 1;
+            text-align: center;
+        }
+        .navigation {
+            grid-area: nav;
+            background: lightblue;
+            padding: 20px;
+        }
+        .content {
+            grid-area: content;
+            background: lightyellow;
+            min-height: 200px;
+            padding: 20px;
+        }
+        .white-space {
+            grid-area: white;
+            background: white;
+            min-height: 50px;
+        }
+        .footer {
+            grid-area: footer;
+            background: gray;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo"></div>
+    <div class="header"></div>
+    <div class="nav">
+        <div>Menu 1</div>
+        <div>Menu 2</div>
+        <div>Menu 3</div>
+        <div>Menu 4</div>
+        <div>Menu 5</div>
+    </div>
+    <div class="navigation">Navigation</div>
+    <div class="content">Content</div>
+    <div class="white-space"></div>
+    <div class="footer">Footer</div>
+</div>
+
+</body>
+</html>

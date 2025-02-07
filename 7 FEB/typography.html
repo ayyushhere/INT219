@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-extrabold text text-center mb-8">Tailwind CSS Typography Example</h1>
+
+        <!-- headings -->
+
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Headings</h2>
+            <h1 class="text-4xl font-extrabold mb-2">Heading 1</h1>
+            <h2 class="text-3xl font-bold mb-2">Heading 2</h2>
+            <h3 class="text-2xl font-semibold mb-2">Heading 3</h3>
+            <h4 class="text-xl font-medium mb-2">Heading 4</h4>
+            <h5 class="text-lg font-normal mb-2">Heading 5</h5>
+            <h6 class="text-base font-light mb-2">Heading 6</h6>
+        </section>
+
+        <!-- paragraphs -->
+         <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Paragraphs</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                This is a paragraph with default styling. Tailwind css provides utilities to control
+                text size, color, line height and more.
+            </p>
+            <p class="text-lg text-gray-600 leading-loose mb-4">
+                This is a larger paragraph with higher text color and increased line height for better readability
+            </p>
+            <p class="text-sm text-gray-500">
+                This is a smaller paragraph with muted text color.
+            </p>
+         </section>
+
+         <!-- block quote -->
+          <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Blockquote</h2>
+            <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-600">
+                "Tailwind css makes styling effortless and highly customizable."
+            </blockquote>
+
+          </section>
+
+          <!-- Lists -->
+           <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4">Lists</h2>
+            <ul class="list-disc pl-6 mb-4">
+                <li class="mb-2">Unordered list item 1</li>
+                <li class="mb-2">Unordered list item 2</li>
+                <li>Unordered list item 3</li>
+            </ul>
+           </section>
+
+           <!-- Inline Text styles -->
+            <section>
+                <h2 class="text-2xl font-bold mb-4">
+                    Inline Text Styles
+                    <p>
+                        You can style text with <span class="font-bold">bold</span>,<span class="italic">italic</span>,and <span class="line-through">line-through</span> utilities. You can also change <span class="text-blue-500">text color</span> and <span class="bg-yellow-200">background color</span>
+                        <br>
+                        <p class="overline">The quick brown fox...</p>
+                        <p class="line-through">The quick brown fox...</p>
+                        <p class="no-underline">The quick brown fox...</p>
+                    </p>
+                </h2>
+
+                <p>
+                    I’m Derek, an astro-engineer based in Tattooine. I like to build X-Wings
+                    at <a class="underline decoration-sky-500">My Company, Inc</a>. Outside
+                    of work, I like to <a class="underline decoration-pink-500">watch pod-racing</a>
+                    and have <a class="underline decoration-indigo-500">light-saber</a> fights.
+                  </p>
+
+                  <br>
+
+                  <p>1<sup>st</sup></p>
+
+                  <br>
+
+                  <dl class="...">
+                    <dt class="...">Subtotal</dt>
+                    <dd class="text-right slashed-zero tabular-nums ...">$100.00</dd>
+                    <dt class="...">Tax</dt>
+                    <dd class="text-right slashed-zero tabular-nums ...">$14.50</dd>
+                    <dt class="...">Total</dt>
+                    <dd class="text-right slashed-zero tabular-nums ...">$114.50</dd>
+                  </dl>
+            </section>
+    </div>
+
+    
+</body>
+</html>

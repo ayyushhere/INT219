@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Box Model Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="./output.css"> -->
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto my-12">
+        <h1 class="text-3xl font-bold text-center mb-8">Tailwind Css Box Model </h1>
+
+        <div class="flex justify-center">
+            <div class="bg-blue-500 text-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4">Box Model</h2>
+                <p class="mb-4">This box demonstrates the properties of the box model using Tailwind CSS:</p>
+
+                <div class="bg-white text-gray-700 p-4 rounded border mb-4">
+                    <h3 class="font-bold">Padding</h3>
+                    <p>This box has <code>p-4</code>, which means padding of 1rem(16 px)</p>
+                </div>
+                
+                <div class="bg-white text-gray-700 p-4 rounded border-4 border-dashed border-blue-300 mb-4">
+                    <h3 class="font-bold">Border</h3>
+                    <p>This box has <code>Border-4</code>, a dashed border with <code>border-blue-300</code>.</p>
+                </div>
+
+                <div class="bg-white text-gray-700 p-4 rounded border mb-4">
+                    <h3 class="font-bold">Margin</h3>
+                    <p>This box is separated from other using <code>mb-4</code> (Margin-bottom).</p>
+                </div>
+
+                <div class="bg-white text-gray-700 p-4 rounded border w-64 h-32 flex items-center justify-center">
+                    <h3 class="font-bold">Width and Height</h3>
+                    <p class="text-sm">This box has <code>w-64</code> (16rem) and <code>h-32</code> (8rem)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

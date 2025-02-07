@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind CSS</title>
+</head>
+
+<body>
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8">Tailwind CSS List Example</h1>
+
+        <!-- Unordered List -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Unordered List</h2>
+            <ul class="list-disc pl-6 text-gray-800">
+                <li class="mb-2">Item one</li>
+                <li class="mb-2">Item Two</li>
+                <li class="mb-2">Item Three</li>
+                <li>Item Four</li>
+            </ul>
+        </section>
+
+        <!-- Ordered List  -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Unordered List</h2>
+            <ol class="list-decimal pl-6 text-gray-800">
+                <li class="mb-2">Item One</li>
+                <li class="mb-2">Item Two</li>
+                <li class="mb-2">Item Three</li>
+                <li>Item Four</li>
+            </ol>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Unordered Roman List</h2>
+            <ol class="list-[upper-roman] pl-6 text-gray-800">
+                <li class="mb-2">Item One</li>
+                <li class="mb-2">Item Two</li>
+                <li class="mb-2">Item Three</li>
+                <li>Item Four</li>
+            </ol>
+        </section>
+
+        <!-- Custom List Style  -->
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Custom List Style</h2>
+            <ul class="list-none text-gray-800">
+                <li class="mb-2 flex items-center">
+                    <span class="inline-block w-4 h-4 bg-blue-500 rounded-tr-xs mr-2"></span>
+                    Custom Item one
+                </li>
+                <li class="mb-2 flex items-center">
+                    <span class="inline-block w-4 h-4 bg-green-500 rounded-tr-xs mr-2"></span>
+                    Custom Item Two
+                </li>
+                <li class="mb-2 flex items-center">
+                    <span class="inline-block w-4 h-4 bg-red-500 rounded-tr-xs mr-2"></span>
+                    Custom Item Three
+                </li>
+            </ul>
+        </section>
+
+<br>
+        <section>
+            <h2 class="text-2xl font-semibold mb-4">Custom List Style</h2>
+            <ul class="list-none pl-5 space-y-2">
+                <li
+                    class="before:content-['★'] before:text-yellow-500 before:font-bold before:mr-2 before:inline-block hover:before:text-red-500">
+                    Apple
+                </li>
+                <li
+                    class="before:content-['★'] before:text-yellow-500 before:font-bold before:mr-2 before:inline-block">
+                    Banana
+                </li>
+                <li
+                    class="before:content-['★'] before:text-yellow-500 before:font-bold before:mr-2 before:inline-block">
+                    Cherry
+                </li>
+            </ul>
+
+        </section>
+    </div>
+</body>
+
+
+<footer p-5></footer>
+
+</html>
