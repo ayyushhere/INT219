@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-4 text-center">Dynamic Task Manager</h1>
+        <div class="flex items-center space-x-2 mb-4">
+            <input type="text" id="taskInput" placeholder="Enter your task"
+                class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <button id="addtaskbtn" type="button" onclick="addTask()"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Add Task
+            </button>
+        </div>
+        <ul id="taskList" class="list-disc pl-5 space-y-2"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            const Task = document.getElementById("taskInput").value.trim();
+            const list = document.getElementById("taskList");
+
+            if (Task !== "") {
+                const listItem = document.createElement("li");
+                listItem.textContent = Task;
+                listItem.className = "bg-gray-100 p-2 rounded-lg shadow-sm decoration:none";
+                list.appendChild(listItem);
+                document.getElementById("taskInput").value = "";
+            } else {
+                alert("Please enter the task");
+            }
+        }
+    </script>
+</body>
+
+</html>

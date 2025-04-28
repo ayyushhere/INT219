@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbox Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1 class="text-center text-2xl font-bold mt-4">Lightbox Gallery</h1>
+        <div class="grid grid-cols-4 gap-4 p-4">
+            <img src="/08_APRIL/images/photo1.jpg" alt="Image 1" class="cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+            <img src="/08_APRIL/images/photo2.jpg" alt="Image 2" class="cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+            <img src="/08_APRIL/images/photo5.jpg" alt="Image 3" class="cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+            <img src="/08_APRIL/images/photo3.jpg" alt="Image 4" class="cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            // Logic to open the lightbox with the selected image
+            const lightbox = document.createElement('div');
+            lightbox.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center';
+            const img = document.createElement('img');
+            img.src = src;
+            img.className = 'max-w-full max-h-full';
+            lightbox.appendChild(img);
+            lightbox.onclick = () => lightbox.remove();
+            document.body.appendChild(lightbox);
+            // Add keyboard navigation for closing the lightbox
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    lightbox.remove();
+                }
+            });
+        }   
+
+    </script>
+</body>
+</html>

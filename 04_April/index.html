@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Paragraph Styler</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="bg-blue-400 h-screen flex flex-col items-center justify-center">
+        <h1 class="text-center text-[30px] text-white font-bold">🎨 Dynamic Paragraph Styler</h1>
+        
+        <div class="container mx-auto mt-5 flex flex-col items-center justify-center gap-5">
+            <div class="bg-white h-[450px] w-[450px] border-2 border-white rounded-md p-[20px]">
+                <p class="text-center p-[8px] mb-4 font-semibold text-gray-700">Customize Your Paragraph</p>
+
+                <label for="Text-Color">Text Color:</label><br>
+                <select name="Color" id="Text-Color" class="border-2 border-gray-300 rounded-md p-2 mb-4 w-[400px]">
+                    <option value="black">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="red">Red</option>
+                </select>
+
+                <label for="Font-size">Font Size:</label><br>
+                <select name="font-size" id="Font-size" class="border-2 border-gray-300 rounded-md p-2 mb-4 w-[400px]">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+
+                <label for="bg-col">Background Color:</label><br>
+                <select name="bg-color" id="bg-col" class="border-2 border-gray-300 rounded-md p-2 mb-4 w-[400px]">
+                    <option value="">Select Color</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+
+                <button onclick="applyStyles()" class="mt-8 p-2 bg-blue-500 text-white rounded-md w-[400px] cursor-pointer hover:bg-blue-400 transition-all duration-300 ease-in-out">
+                    ✨ Apply Styles
+                </button>
+            </div>
+
+            <div class="bg-white w-[450px] h-[60px] rounded-md text-center cursor-pointer flex items-center justify-center">
+                <p id="styledPara" class="text-base">This is a sample paragraph. Change my Style!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function applyStyles() {
+            const textColor = document.getElementById('Text-Color').value;
+            const fontSize = document.getElementById('Font-size').value;
+            const bgColor = document.getElementById('bg-col').value;
+
+            const paragraph = document.getElementById('styledPara');
+
+            // Set text color
+            paragraph.style.color = textColor;
+
+            // Set font size
+            switch (fontSize) {
+                case 'small':
+                    paragraph.style.fontSize = '12px';
+                    break;
+                case 'medium':
+                    paragraph.style.fontSize = '16px';
+                    break;
+                case 'large':
+                    paragraph.style.fontSize = '20px';
+                    break;
+            }
+
+            // Set background color
+            paragraph.parentElement.style.backgroundColor = bgColor;
+
+            // Smooth transition
+            paragraph.style.transition = 'all 0.3s ease-in-out';
+        }
+    </script>
+
+</body>
+
+</html>

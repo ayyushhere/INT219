@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: poppins;
+        }
+
+        .container {
+            padding: 40px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            width: 300px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .container p {
+            color: #333;
+            font-size: 16px;
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+
+        #changeStyleBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h3>Dynamic Styling Example</h3>
+    <div class="container">
+        Hello, change my style!
+    </div>
+    <button onclick="changeStyle()"  id="changeStyleBtn">Change Style</button>
+
+
+    <script>
+        // const button = document.getElementById('changeStyleBtn');
+        // const container = document.querySelector('.container');
+        // const paragraph = container.querySelector('p');
+
+        // button.addEventListener('click', () => {
+        //     container.style.backgroundColor = 'blue';
+        //     paragraph.style.color = "white";
+        // });
+
+        function changeStyle(){
+            let div = document.querySelector('.container');
+            div.style.backgroundColor = 'blue';
+            div.style.color = 'white';
+        }
+
+        // let button = document.getElementById('changeStyleBtn');
+        // button.addEventListener('click', changeStyle);
+    </script>
+</body>
+</html>

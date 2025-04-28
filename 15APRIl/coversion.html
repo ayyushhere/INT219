@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Document</title>
+</head>
+
+<body>
+    <h1>JSON Object ⇋ String Conversion</h1>
+    <p>This document will demonstrate how to convert a JSON object to a string.</p>
+
+    <h2>String to JSON Object</h2>
+    <textarea name="jsonInput" id="jsonInput" rows="5" cols="50">
+{
+    "name": "John Doe",
+    "age": 30,
+    "email": "john.doe@example.com"
+}
+    </textarea>
+    <button onclick="convertStringToJSON()">Convert to JSON</button>
+    <pre id="parsedJsonOutput"></pre>
+
+    <h2>JSON Object to String</h2>
+    <pre id="JSONStrigOutput"></pre>
+
+    <script>
+        // JSON Object to String conversion
+        const user = {
+            name: "Alice",
+            age: 30,
+            email: "alice@example.com"
+        };
+
+        const jsonString = JSON.stringify(user, null, 2); // Pretty format
+        document.getElementById("JSONStrigOutput").textContent = jsonString;
+
+        // String to JSON Object conversion
+        function convertStringToJSON() {
+            const jsonString = document.getElementById("jsonInput").value;
+            try {
+                const input = JSON.parse(jsonString);
+                document.getElementById("parsedJsonOutput").textContent = `Name: ${input.name}, Age: ${input.age}, Email: ${input.email}`;
+            } catch (e) {
+                document.getElementById("parsedJsonOutput").textContent = "Invalid JSON string";
+            }
+        }
+        // Log the JSON object to string conversion
+        console.log("JSON Object to String:");
+        console.log(jsonString);
+        document.getElementById("JSONStringOutput").textContent = jsonString;
+
+    </script>
+</body>
+
+</html>

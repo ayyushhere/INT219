@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .higlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Hello. DOM!</h1>
+    <p class="description">This is a paragraph with a class</p>
+    <p class="description">Another paragraph with same class</p>
+    <div class="container">
+        <p>Inside a container</p>
+    </div>
+    <ul>
+        <li>Item 1</li>
+        <li class="list-item">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        //Select by Id
+        let title = document.getElementById("main-title");
+        console.log(title.textcontent);
+
+        //Select by ClassName (returns a collection)
+        let description = document.getElementsByClassName("description");
+        console.log(description[0].textContent);
+
+        //Select by Tag Name(return a collection)
+        let paragraphs = document.getElementsByTagName("p");
+        console.log(paragraphs.name);
+
+        //Select first matching element with querSelector(CSS Selector)
+        let firsItem = document.querySelector("ul li");
+        console.log(firstItem.textContent);
+        
+        //Select first matching element with querSelector(CSS Selector)
+        let listItems = document.querySelectorAll("ul li");
+        listItems.forEach(item => console.log(item.textContent));
+
+        //Modify an element (change text and style)
+        title.textContent = "DOM Manipulation in Action!";
+        title.style.colon = "blue";
+
+        //Adding a new class to an element
+        firstItem.classList.add("highlight");
+    </script>
+</body>
+</html>

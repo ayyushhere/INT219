@@ -1,0 +1,35 @@
+[
+    
+    {
+        "name": "Alice",
+        "age": 30,
+        "address": {
+            "city": "San Francisco"
+        },
+        "hobbies": ["writing", "biking"]
+    },
+    {
+        "name": "Bob",
+        "age": 25,
+        "address": {
+            "city": "New York"
+        },
+        "hobbies": ["reading", "gaming"]
+    },
+    {
+        "name": "Charlie",
+        "age": 35,
+        "address": {
+            "city": "Los Angeles"
+        },
+        "hobbies": ["cooking", "traveling"]
+    },
+    {
+        "name": "David",
+        "age": 28,
+        "address": {
+            "city": "Chicago"
+        },
+        "hobbies": ["photography", "hiking"]
+    }
+]

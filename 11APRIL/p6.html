@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 6px 10px;
+        }
+        #box {
+            border: 2px solid #007acc;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>🔧 jQuery DOM Manipulation Methods</h2>
+
+    <input type="text" id="userInput" placeholder="Enter some text">
+    <button id="setHtml">.html()</button>
+    <button id="setText">.text()</button>
+    <button id="getHtml">get .html()</button>
+    <button id="getText">get .text()</button>
+    <button id="getVal">get .val()</button>
+
+    <button id="append">.append()</button>
+    <button id="prepend">.prepend()</button>
+    <button id="before">.before()</button>
+    <button id="after">.after()</button>
+    <button id="remove">.remove()</button>
+    <button id="empty">.empty()</button>
+
+    <h3>🧱 Target Box:</h3>
+    <div id="box">
+        <p>This is the original <strong>content</strong></p>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $("#setHtml").click(function() {
+                let value = $("#userInput").val();
+                $("#box").html("<p><strong>" + value + "</strong></p>");
+            });
+
+            // Set plain text (no formatting)
+            $("#setText").click(function() {
+                let value = $("#userInput").val();
+                $("#box").text(value);
+            });
+
+            // Get HTML content
+            $("#getHtml").click(function() {
+                alert($("#box").html());
+            });
+
+            // Get plain text (no formatting)
+            $("#getText").click(function() {
+                alert($("#box").text());
+            });
+
+            // Get value from input
+            $("#getVal").click(function() {
+                alert($("#userInput").val());
+            });
+
+            // Append content
+            $("#append").click(function() {
+                let value = $("#userInput").val();
+                $("#box").append("<p>👉Appended content!</p>");
+            });
+
+            // Prepend content
+            $("#prepend").click(function() {
+                let value = $("#userInput").val();
+                $("#box").prepend("<p>" + value + "</p>");
+            });
+
+            // Insert content before the box
+            $("#before").click(function() {
+                let value = $("#userInput").val();
+                $("#box").before("<p>Content inserted before the box</p>⬆️");
+            });
+
+            // Insert content after the box
+            $("#after").click(function() {
+                let value = $("#userInput").val();
+                $("#box").after("⬇️<p>Content inserted after the box</p>");
+            });
+
+            // Remove the box
+            $("#remove").click(function() {
+                $("#box").remove();
+            });
+
+            // Empty the box
+            $("#empty").click(function() {
+                $("#box").empty();
+            });
+        });
+    </script>
+</body>
+</html>

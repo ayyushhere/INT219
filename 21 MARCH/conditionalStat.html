@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements</title>
+</head>
+<body>
+    <h1>Conditional Statements</h1>
+    <script>
+        let number = prompt("Enter a number");
+        number = Number(number);
+        if(isNaN(number)){
+            alert("Invalid input. Please enter a valid number.");
+        }
+        else if(number > 0){
+            alert("The number is positive");
+        }
+        else if(number < 0){
+            alert("The number is negative");
+        }
+        else{
+            alert("The number is zero");
+        }
+
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex justify-center items-center h-[200px] w-[500px] flex-col gap-5 border-2 border-black border-solid p-10 rounded-md mx-auto mt-10">
+        <button id="myButton" class="bg-blue-500 text-white px-4 py-2 rounded-md mx-2 ring-2 ring-white-500 hover:bg-blue-600 transition-all duration-300">Click me</button>
+        <button id="removeButton" class="bg-red-500 text-white px-4 py-2 rounded-md mx-2 ring-2 ring-white-500 hover:bg-red-600 transition-all duration-300">Remove Event</button>
+        <p id="message" class="text-center text-xl mt-5">click the button to see the message</p>
+    </div>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const removeButton = document.getElementById('removeButton');
+        const message = document.getElementById('message');
+
+        function handleClick() {
+            message.textContent = "Button clicked!";
+        }
+
+        button.addEventListener('click', handleClick);
+
+        removeButton.addEventListener('click', function() {
+            message.textContent = "Event Listener Removed!";
+            button.removeEventListener('click', handleClick);
+        });
+    </script>
+</body>
+
+</html>

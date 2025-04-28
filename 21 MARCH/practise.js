@@ -127,8 +127,19 @@ console.log("m >> 1 =", m >> 1);
 
 console.log("--------------------------------");
 
+//7.Type Operators
+console.log("Type Operators");
+console.log("typeof 42 =", typeof 42);
+console.log("typeof 'Hello' =", typeof 'Hello');
+console.log("typeof true =", typeof true);
+console.log("typeof {} =", typeof {});
+console.log("typeof [] =", typeof []);
+console.log("\n");
 
+console.log("--------------------------------");
 
-
-
+let no = "43dk";
+console.log(Number(no));
+console.log(parseInt("43dk")); // This will output 43 by parsing until it hits non-numeric characters
+console.log(parseFloat("43dk")); // This will also output 43
 

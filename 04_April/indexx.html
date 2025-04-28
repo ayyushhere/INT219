@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="container flex flex-col items-center justify-center h-screen bg-blue-400">
+        <div class="h-[350px] w-[350px] bg-white rounded-[24px] flex flex-col items-center border-2 border-white p-[20px]">
+            <h1 class="text-center text-[25px] mt-4 font-bold text-blue-600">Countdown Timer</h1>
+            <input type="text" id="timeInput" placeholder="Enter time in seconds" class="border-2 border-blue-800 rounded-md p-2 m-5 w-[300px]">
+            <button class="bg-blue-600 text-white rounded-md p-4 font-bold" onclick="startCountdown()">Start Countdown</button>
+            <div id="display" class="p-2 rounded-md m-5  text-blue-900 text-[20px] font-semibold bg-blue-300">Your countdown starts!</div>
+        </div>
+    </div>
+
+    <script>
+        function startCountdown() {
+            const input = document.getElementById("timeInput");
+            const display = document.getElementById("display");
+            let time = parseInt(input.value);
+
+            if (isNaN(time) || time <= 0) {
+                alert("⛔ Please enter a valid time in seconds.");
+                return;
+            }
+
+            input.disabled = true;
+            const button = document.querySelector("button");
+            button.disabled = true;
+            button.innerText = "⏳ Counting...";
+
+            display.innerText = `⏱️ ${time} seconds remaining`;
+
+            const countdownInterval = setInterval(() => {
+                time--;
+                if (time > 0) {
+                    display.innerText = `⏱️ ${time} seconds remaining`;
+                } else {
+                    clearInterval(countdownInterval);
+                    display.innerText = "✅ Time's up!";
+                    input.disabled = false;
+                    button.disabled = false;
+                    button.innerText = "Restart Countdown";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

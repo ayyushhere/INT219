@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">User List</h1>
+    <button id="loadBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Load User</button>
+    <div id="userList" class="mt-4 space-y-4"></div>
+
+    <script>
+        //Sample JSON object (array of user objects)
+        const jsonData ={
+            users : [
+                { "name": "John Doe", "age": 30 , "email": "john.doe@example.com" },
+                { "name": "Jane Smith", "age": 25 , "email": "jane.smith@example.com" },
+                { "name": "Sam Brown", "age": 22 , "email": "sam.brown@example.com" }
+            ]
+        }
+
+        //Query DOM
+        const button = document.querySelector('#loadBtn');
+        const userList = document.querySelector('#userList');
+
+        //Event listener for button click
+        button.addEventListener("click", () => {
+            // Clear previous content
+            userList.innerHTML = '';
+
+            // Iterate over the JSON data and create list items
+            jsonData.users.forEach(user => {
+            const listItem = document.createElement('div');
+            listItem.className = "p-4 bg-white shadow rounded";
+            listItem.innerHTML = `<strong>Name:</strong> ${user.name} <br> <strong>Age:</strong> ${user.age} <br> <strong>Email:</strong> ${user.email}`;
+            userList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

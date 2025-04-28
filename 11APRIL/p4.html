@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit List</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            padding: 0;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            list-style: none;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        li.even {
+            background-color: #d4edda;
+        }
+        li.odd {
+            background-color: #f8d7da;
+        }
+        li:hover {
+            background-color: #e2e3e5;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button#evenBtn {
+            background-color: #28a745;
+            color: white;
+        }
+        button#evenBtn:hover {
+            background-color: #218838;
+        }
+        button#OddBtn {
+            background-color: #dc3545;
+            color: white;
+        }
+        button#OddBtn:hover {
+            background-color: #c82333;
+        }
+        button#resetBtn {
+            background-color: #6c757d;
+            color: white;
+        }
+        button#resetBtn:hover {
+            background-color: #5a6268;
+        }
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fruit List (Even/Odd Highlight)</h2>
+    <ul id="fruitList">
+        <li>🍎 Apple</li>
+        <li>🍌 Banana</li>
+        <li>🍒 Cherry</li>
+        <li>🍑 Date</li>
+        <li>🍇 Elderberry</li>
+        <li>🍉 Watermelon</li>
+        <li>🍍 Pineapple</li>
+        <li>🍊 Orange</li>
+    </ul>
+
+    <div class="button-container">
+        <button class="justify-center bg-indigo-600" id="highlightBtn">Highlight with jquery</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $("#evenBtn").click(function () {
+        //         $("#fruitList li").removeClass("even odd");
+        //         $("#fruitList li:nth-child(even)").addClass("even");
+        //     });
+
+        //     $("#OddBtn").click(function () {
+        //         $("#fruitList li").removeClass("even odd");
+        //         $("#fruitList li:nth-child(odd)").addClass("odd");
+        //     });
+
+        //     $("#resetBtn").click(function () {
+        //         $("#fruitList li").removeClass("even odd");
+        //     });
+        // });
+
+
+        $(document).ready(function () {
+            $("#highlightBtn").click(function (){
+                // Highlight even items
+                $("#fruitList li:first").css("background-color", "#d4edda");
+
+                //:last-child selector to highlight the last item
+                $("#fruitList li:last-child").css("background-color", "#f8d7da");
+
+                //:nth-child selector to highlight the third item
+                $("#fruitList li:nth-child(3)").css("background-color", "#d4edda");
+            });
+        });
+    </script>
+</body>
+</html>

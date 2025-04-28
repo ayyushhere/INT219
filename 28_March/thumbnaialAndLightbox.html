@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h2 class="text-2xl font-bold text-center my-5">Thumbnail and Lightbox</h2>
+    <div id="gallery" class="flex flex-wrap gap-5 justify-center p-5">
+        <!-- Thumbnails will be inserted here -->
+    </div>
+    <div id="lightbox" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="relative max-w-[90vw] max-h-[90vh]">
+            <img src="" alt="Lightbox Image" id="lightboxImage" class="w-full h-full object-contain">
+            <button id="closeLightbox" class="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        const thumbnails = [
+            "./images/photo1.jpg",
+            "./images/photo2.jpg",
+            "./images/photo3.jpg",
+            "./images/photo4.jpg",
+            "./images/photo5.jpg"
+        ];
+
+        const gallery = document.getElementById('gallery');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        function createGallery() {
+            thumbnails.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = "Gallery Image";
+                img.className = "w-[200px] h-[200px] object-cover rounded-md cursor-pointer hover:ring-2 hover:ring-blue-500 transition-all duration-300";
+                img.addEventListener('click', () => {
+                    lightboxImage.src = src;
+                    lightbox.style.display = 'flex';
+                });
+                gallery.appendChild(img);
+            });
+        }
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        createGallery();
+    </script>
+</body>
+</body>
+</html>

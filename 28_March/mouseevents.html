@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="box"
+        class="text-center text-xl border-2 border-black border-solid p-[100px] h-[150px] w-[450px] mx-auto mt-10 ">
+        Hover or click</div>
+        <p id="message" class="text-center text-xl mt-5">Mouse event info will appear</p>
+
+        <script>
+            const box = document.getElementById('box');
+            const message = document.getElementById('message');
+
+            // click event - Triggers when the element is clicked
+            box.addEventListener('click', () => {
+                box.style.backgroundColor = 'lightblue';
+                message.textContent = "Box clicked!";
+            });
+
+            // Double click event - Triggers when the element is double-clicked
+            box.addEventListener('dblclick', () => {
+                box.style.backgroundColor = 'lightcoral';
+                message.textContent = "Double clicked!";
+            });
+
+            // mouseover event - Triggers when the mouse pointer enters the element
+            box.addEventListener('mouseover', () => {
+                box.style.backgroundColor = 'lightgreen';
+                message.textContent = "Mouse over!";
+            });
+
+            // mouseout event - Triggers when the mouse pointer leaves the element
+            box.addEventListener('mouseout', () => {
+                box.style.backgroundColor = 'lightgray';
+                message.textContent = "Mouse out!";
+            });
+
+
+            // mousemove event - Triggers when the mouse pointer moves over the element
+            box.addEventListener('mousemove', (event) => {
+                message.textContent = `Mouse position: X: ${event.offsetX} Y: ${event.offsetY}`;
+            });
+            
+            
+        </script>
+
+</body>
+
+</html>

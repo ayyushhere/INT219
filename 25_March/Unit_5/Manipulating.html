@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            color: white;
+            background-color: red;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .image-container {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        #image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Original Title</h1>
+    <div class="image-container">
+        <img src="images/photo1.jpg" alt="Placeholder Image" id="image">
+    </div>
+    <p class="description">This is a sample paragraph.</p>
+
+    <button id="ChangeContentBtn">Change Content</button>
+    <button id="ChangeAttrBtn">Next Image</button>
+    <button id="ChangeStyleBtn">Change Style</button>
+    <button id="toggleClassBtn">Toggle Class</button>
+    <button id="eventBtn">Event Button</button>
+
+    <script>
+        const title = document.getElementById("title");
+        const image = document.getElementById('image');
+        const paragraph = document.querySelector(".description");
+        const eventBtn = document.getElementById("eventBtn");
+
+        // Array of images to rotate through
+        const images = [
+            "images/photo1.jpg",
+            "images/photo2.jpg",
+            "images/photo3.jpg",
+            "images/photo4.jpg",
+            "images/photo5.jpg"
+        ];
+        let currentImageIndex = 0;
+
+        //Changing content
+        document.getElementById("ChangeContentBtn").addEventListener("click", ()=>{
+            title.textContent = "Welcome to Javascript!";
+            paragraph.innerHTML = "<strong>Updated paragraph content.</strong>";
+        });
+
+        // Image rotation
+        document.getElementById("ChangeAttrBtn").addEventListener("click", ()=>{
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            image.setAttribute("src", images[currentImageIndex]);
+            image.setAttribute("alt", `Image ${currentImageIndex + 1}`);
+        });
+
+        // Changing Styles
+        document.getElementById("ChangeStyleBtn").addEventListener("click", ()=>{
+            title.style.color = "blue";
+            title.style.fontSize = "20px";
+        });
+
+        // Adding and Removing Classes
+        document.getElementById("toggleClassBtn").addEventListener("click", ()=>{
+            paragraph.classList.toggle("highlight");
+        });
+
+        // Event Handling
+        eventBtn.addEventListener("click", ()=>{
+            alert("Button clicked!, Event handled successfully");
+        });
+    </script>
+</body>
+</html>

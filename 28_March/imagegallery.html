@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h2 class="text-2xl font-bold text-center my-5">Interactive Image Gallery</h2>
+    <div id="gallery" class="flex flex-wrap gap-5 justify-center p-5">
+        <!-- Images will be inserted here -->
+    </div>
+    <div id="preview" class="flex flex-col gap-5 items-center justify-center mx-auto mt-10 w-full max-w-[800px] border-2 border-black border-solid rounded-md p-5">
+        <p class="text-center text-xl">Click an image to preview it here</p>
+        <img src="" alt="preview" id="largeImage" class="w-full h-[500px] object-cover rounded-md ring-2 ring-black">
+    </div>
+
+    <script>
+        const images = [
+            "./images/photo1.jpg",
+            "./images/photo2.jpg", 
+            "./images/photo3.jpg",
+            "./images/photo4.jpg",
+            "./images/photo5.jpg"
+        ];
+
+        const gallery = document.getElementById('gallery');
+        const largeImage = document.getElementById('largeImage');
+
+        function createGallery() {
+            images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = "Gallery Image";
+                img.className = "w-[200px] h-[200px] object-cover rounded-md cursor-pointer hover:ring-2 hover:ring-blue-500 transition-all duration-300";
+                img.addEventListener('click', () => {
+                    largeImage.src = src;
+                });
+                gallery.appendChild(img);
+            });
+        }
+
+        createGallery();
+    </script>
+</body>
+</html>

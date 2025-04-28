@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h2 class="text-2xl font-bold text-center ">Press any key</h2>
+    <div id="box" class="text-center text-xl border-2 border-black border-solid p-[100px] h-[150px] w-[450px] mx-auto mt-10 ">key event info</div>
+    <p id="message" class="text-center text-xl mt-5"></p>
+
+    <script>
+        const box = document.getElementById('box');
+        const message = document.getElementById('message');
+
+        //Keydown event - Triggers when a key is pressed down
+        document.addEventListener('keydown', (event) => {
+            box.style.backgroundColor = 'lightblue';
+            message.textContent = `Key pressed: ${event.key} | Code: ${event.code}`;
+        });
+
+        //Keyup event - Triggers when a key is released
+        //event.key - Returns the actual character, affected by keyboard layout
+        //The event.code properly returns the physical key on the keyboard that was pressed, regardless of layout or language settings
+        document.addEventListener('keyup', (event) => {
+            box.style.backgroundColor = 'lightgray';
+            message.textContent = `Key released: ${event.key} | Code: ${event.code}`;
+        });
+    </script>
+    
+</body>
+</html>
